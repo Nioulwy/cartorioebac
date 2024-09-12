@@ -147,48 +147,67 @@ int deletar()
 int main()
 {
 	
+	setlocale(LC_ALL, "Portuguese");//definindo linguagem
+	
 	int opcao=0; //definindo variáveis
 	int xd=1;
+	char senha[10]="a";
+	int comp; //comparação
 	
-	for(xd=1;xd=1;)//*começo da repetição
+	printf("	Cartório EBAC	\n\n");
+	printf("Login de Administrador!\n\nDigite a Senha: ");
+	scanf("%s",senha);
+	
+	comp = strcmp(senha, "admin");
+	
+	if(comp == 0)
 	{
 	
-	system("cls");
+		for(xd=1;xd=1;)//*começo da repetição
+		{
 	
-		setlocale(LC_ALL, "Portuguese");//definindo linguagem
+		system("cls");
+	
+			setlocale(LC_ALL, "Portuguese");//definindo linguagem
 //	Definindo o Titulo
-		printf("	Cartório EBAC	\n\n");
+			printf("	Cartório EBAC	\n\n");
 //	Começando o Menu
-		printf("Selecione a opção desejada:\n\n\t1 - Registrar Nomes\n\t2 - Consultar Nomes\n\t3 - Deletar Nomes\n\t4 - Sair do Menu\n\nOpção: ");
+			printf("Selecione a opção desejada:\n\n\t1 - Registrar Nomes\n\t2 - Consultar Nomes\n\t3 - Deletar Nomes\n\t4 - Sair do Menu\n\nOpção: ");
 //	Fim do Menu
 
-		scanf("%d", &opcao);//armazenando a escolha do usuário
+			scanf("%d", &opcao);//armazenando a escolha do usuário
 	
-		system("cls"); //apagar os textos anteriores.
+			system("cls"); //apagar os textos anteriores.
 		
-		switch(opcao)//inicio das opções
-		{
-			case 1:
-			registrar(); //chama a função
-			break;
+			switch(opcao)//inicio das opções
+				{
+				case 1:
+				registrar(); //chama a função
+				break;
 		
-			case 2:
-			consultar();
-			break;
+				case 2:
+				consultar();
+				break;
 		
-			case 3:
-			deletar();
-			break;
+				case 3:
+				deletar();
+				break;
 			
-			case 4:
-			printf("Você saiu do Menu!\n");
-			return 0;
-			break;
+				case 4:
+				printf("Você saiu do Menu!\n");
+				return 0;
+				break;
 		
-			default:
-			printf("Esta opção não existe.\n");
-			system("pause");
-			break;//fim das opções
-		}
-	}//*término da repetição
+				default:
+				printf("Esta opção não existe.\n");
+				system("pause");
+				break;//fim das opções
+			}
+		}//*término da repetição
+	}
+	
+	else
+		system("cls");
+		printf("Senha digitada está incorreta.\n");
+		
 }
